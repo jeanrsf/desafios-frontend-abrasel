@@ -27,19 +27,23 @@ function Palindromos() {
   };
 
   return (
-    <div>
+    <div className='palindromo'>
       <h2>Verificador de Números Palíndromos</h2>
       <label>
-        Início do Intervalo:
+
         <input
+          placeholder="Início do Intervalo:"
+
           type="number"
           value={inicio}
           onChange={(e) => setInicio(e.target.value)}
         />
       </label>
       <label>
-        Fim do Intervalo:
+
         <input
+          placeholder=" Fim do Intervalo:"
+
           type="number"
           value={fim}
           onChange={(e) => setFim(e.target.value)}
