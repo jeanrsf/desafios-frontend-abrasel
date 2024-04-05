@@ -23,27 +23,28 @@ function CEP() {
       }
     }
     setResultados(newResultados);
-    console.log(resultados);
   };
 
   return (
     <div className='cep'>
       <h2>Insira os CEPs:</h2>
-      <form onSubmit={handleSubmit}>
-        {ceps.map((cep, index) => (
-          <input
-            key={index}
-            type="text"
-            value={cep}
-            onChange={(e) => handleChange(index, e.target.value)}
-          />
-        ))}
-        <button type="submit">Buscar</button>
-      </form>
+      <div className='formulario-cep'>
+        <form onSubmit={handleSubmit}>
+          {ceps.map((cep, index) => (
+            <input
+              key={index}
+              type="text"
+              value={cep}
+              onChange={(e) => handleChange(index, e.target.value)}
+            />
+          ))}
+          <button type="submit">Buscar</button>
+        </form>
+      </div>
       <div>
         {resultados.map((resultado, index) => (
           <div key={index}>
-            <h2>CEP {ceps[index]}:</h2>  
+            <h2>CEP {ceps[index]}:</h2>
             <h3>logradouro:{JSON.stringify(resultado.logradouro, null, 2)}</h3>
             <h3>complemento:{JSON.stringify(resultado.complemento, null, 2)}</h3>
             <h3>bairro:{JSON.stringify(resultado.bairro, null, 2)}</h3>

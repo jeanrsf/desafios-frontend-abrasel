@@ -38,37 +38,40 @@ function Troco() {
   return (
     <div className='troco'>
       <h2>Calculadora de Troco</h2>
-        <div>
-      <label>
-        <input
-        placeholder="Valor da Compra:"
-          type="number"
-          value={valorCompra}
-          onChange={(e) => setValorCompra(e.target.value)}
-        />
-      </label>
-      <label>
-        
-        <input
-        placeholder="Valor Entregue:"
+      <div>
+      <div className='formulario'>
 
-          type="number"
-          value={valorEntregue}
-          onChange={(e) => setValorEntregue(e.target.value)}
-        />
-      </label>
-      <button onClick={calcularTroco}>Calcular Troco</button>
+        <label>
+          <input
+            placeholder="Valor da Compra:"
+            type="number"
+            value={valorCompra}
+            onChange={(e) => setValorCompra(e.target.value)}
+          />
+        </label>
+          <label>
+
+            <input
+              placeholder="Valor Entregue:"
+
+              type="number"
+              value={valorEntregue}
+              onChange={(e) => setValorEntregue(e.target.value)}
+            />
+          </label>
+          <button onClick={calcularTroco}>Calcular Troco</button>
+        </div>
       </div>
-<div>
-      <h3>Troco: R$ {troco}</h3>
-      <h4>Quantidade de Notas:</h4>
-      <ul>
-        {Object.entries(notas).map(([valorNota, quantidade]) => (
-          <li key={valorNota}>
-            {quantidade} nota(s) de R$ {valorNota}
-          </li>
-        ))}
-      </ul>
+      <div>
+        <h3>Troco: R$ {troco}</h3>
+        <h4>Quantidade de Notas:</h4>
+        <ul>
+          {Object.entries(notas).map(([valorNota, quantidade]) => (
+            <li key={valorNota}>
+              {quantidade} nota(s) de R$ {valorNota}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
